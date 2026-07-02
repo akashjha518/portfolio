@@ -2,7 +2,7 @@ function Journey() {
   return (
     <section className="mx-auto max-w-4xl px-gutter py-xl" id="experience">
       <div className="fade-in-up mb-xl text-center">
-        <h2 className="font-display-md text-display-md text-on-surface">
+        <h2 className="font-display-md text-3xl text-on-surface sm:text-display-md">
           My <span className="text-primary-container">Journey</span>
         </h2>
         <p className="mt-2 font-light text-on-surface-variant">
@@ -29,10 +29,10 @@ function Journey() {
             <span className="mb-sm block text-sm font-bold uppercase tracking-widest text-primary-container">
               {period}
             </span>
-            <h3 className="font-headline-lg text-2xl text-on-surface transition-transform duration-300 group-hover:translate-x-2">
+            <h3 className="font-headline-lg text-xl text-on-surface transition-transform duration-300 group-hover:translate-x-2 sm:text-2xl">
               {title}
             </h3>
-            <p className="mt-2 text-lg font-light text-on-surface-variant">{description}</p>
+            <p className="mt-2 text-base font-light text-on-surface-variant sm:text-lg">{description}</p>
           </div>
         ))}
       </div>
@@ -41,4 +41,3 @@ function Journey() {
 }
 
 export default Journey;
-

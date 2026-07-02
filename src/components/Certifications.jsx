@@ -22,7 +22,7 @@ function Certifications() {
   return (
     <section className="mx-auto max-w-container-max px-gutter py-xl" id="certifications">
       <div className="fade-in-up mb-xl text-center">
-        <h2 className="font-display-md text-display-md text-on-surface">
+        <h2 className="font-display-md text-3xl text-on-surface sm:text-display-md">
           Academic <span className="text-primary-container">Certifications</span>
         </h2>
         <p className="mt-3 text-on-surface-variant">
@@ -44,13 +44,13 @@ function Certifications() {
                 <span className="material-symbols-outlined text-[24px]">{cert.icon}</span>
               </div>
 
-              <h3 className="mb-2 text-2xl font-semibold text-on-surface">
+              <h3 className="mb-2 text-xl font-semibold text-on-surface sm:text-2xl">
                 {cert.title}
               </h3>
               <p className={`mb-4 text-[13px] font-bold uppercase tracking-[0.18em] ${styles.title}`}>
                 {cert.issuer}
               </p>
-              <p className="mb-8 min-h-[84px] text-sm leading-6 text-on-surface-variant">
+              <p className="mb-8 min-h-[84px] text-xs leading-6 text-on-surface-variant sm:text-sm">
                 {cert.description}
               </p>
 

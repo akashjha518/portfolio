@@ -5,7 +5,7 @@ function Projects() {
     <section className="mx-auto max-w-container-max px-gutter py-xl" id="projects">
       <div className="fade-in-up mb-xl flex flex-col items-end justify-between gap-md md:flex-row">
         <div>
-          <h2 className="mb-sm font-display-md text-display-md text-on-surface">
+          <h2 className="mb-sm font-display-md text-3xl text-on-surface sm:text-display-md">
             Featured <span className="text-primary-container">Work</span>
           </h2>
           <p className="font-light text-on-surface-variant">
@@ -81,9 +81,9 @@ function Projects() {
       </div>
 
       <div className="fade-in-up border-t border-white/5 pt-xl">
-        <h2 className="mb-lg font-display-md text-display-md text-on-surface">
-          Other Technical <span className="text-primary-container">Projects</span>
-        </h2>
+          <h2 className="mb-lg font-display-md text-3xl text-on-surface sm:text-display-md">
+            Other Technical <span className="text-primary-container">Projects</span>
+          </h2>
         <div className="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-4">
           {otherProjects.map(([title, tag, icon, description, url]) => (
             <div key={title} className="group flex h-full flex-col rounded-xl p-lg glass-card">

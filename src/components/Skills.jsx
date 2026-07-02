@@ -6,7 +6,7 @@ function Skills() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       <div className="relative z-10 mx-auto max-w-container-max px-gutter">
         <div className="fade-in-up mb-xl text-center">
-          <h2 className="mb-md font-display-md text-display-md text-on-surface">
+          <h2 className="mb-md font-display-md text-3xl text-on-surface sm:text-display-md">
             Technical <span className="text-primary-container">Capabilities</span>
           </h2>
           <p className="mx-auto max-w-xl font-light text-on-surface-variant">
@@ -28,7 +28,7 @@ function Skills() {
                   {skill.icon}
                 </span>
               </div>
-              <h3 className="mb-md font-headline-lg text-xl text-on-surface">{skill.title}</h3>
+              <h3 className="mb-md font-headline-lg text-lg text-on-surface sm:text-xl">{skill.title}</h3>
               <ul className="space-y-3 font-light text-on-surface-variant">
                 {skill.items.map((item) => (
                   <li key={item} className="flex items-center gap-3">
@@ -46,4 +46,3 @@ function Skills() {
 }
 
 export default Skills;
-

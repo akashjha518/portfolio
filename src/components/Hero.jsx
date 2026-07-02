@@ -1,3 +1,5 @@
+import { resumeUrl } from '../data';
+
 function Hero({ onNavigate }) {
   return (
     <section className="shimmer-bg relative flex min-h-screen items-center justify-center overflow-hidden px-gutter pt-xl">
@@ -12,15 +14,15 @@ function Hero({ onNavigate }) {
             Available for new opportunities
           </span>
         </div>
-        <h1 className="mb-lg font-display-lg text-[44px] font-extrabold leading-[1.1] tracking-tighter text-on-surface md:text-[84px]">
+        <h1 className="mb-lg font-display-lg text-[36px] font-extrabold leading-[1.1] tracking-tighter text-on-surface sm:text-[44px] md:text-[84px]">
           Building Digital <span className="text-primary">Masterpieces</span> Through Code
         </h1>
-        <p className="mx-auto mb-xl max-w-3xl font-body-lg text-lg font-light leading-relaxed text-on-surface-variant/80 md:text-xl">
+        <p className="mx-auto mb-xl max-w-3xl font-body-lg text-base font-light leading-relaxed text-on-surface-variant/80 sm:text-lg md:text-xl">
           M.Sc. Informatics Candidate. I engineer high-performance web experiences and intelligent Python solutions that blend technical precision with creative design.
         </p>
         <div className="flex flex-col items-center justify-center gap-lg sm:flex-row">
           <a
-            className="group flex items-center justify-center gap-sm rounded-full bg-primary-container px-10 py-5 text-[18px] font-headline-md text-on-primary-container transition-all duration-500 hover:shadow-[0_0_30px_rgba(60,233,245,0.4)]"
+            className="group flex items-center justify-center gap-sm rounded-full bg-primary-container px-8 py-4 text-base font-headline-md text-on-primary-container transition-all duration-500 hover:shadow-[0_0_30px_rgba(60,233,245,0.4)] sm:px-10 sm:py-5 sm:text-[18px]"
             href="#projects"
             onClick={onNavigate('#projects')}
           >
@@ -29,24 +31,31 @@ function Hero({ onNavigate }) {
               arrow_forward
             </span>
           </a>
-          <div className="flex gap-md">
+          <div className="flex flex-wrap justify-center gap-md">
             <a
-              className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-5 text-[18px] font-headline-md text-on-surface transition-all hover:bg-white/10"
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-4 text-base font-headline-md text-on-surface transition-all hover:bg-white/10 sm:px-8 sm:py-5 sm:text-[18px]"
               href="#contact"
               onClick={onNavigate('#contact')}
             >
               Get in Touch
             </a>
-            {/* <a
-              className="rounded-full border border-white/10 bg-white/5 p-5 text-primary-container transition-all hover:bg-white/10"
-              href="#"
-              title="Download Resume"
-              onClick={(event) => event.preventDefault()}
+            <a
+              className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-6 py-4 text-base font-headline-md text-primary-container transition-all hover:bg-primary/15 sm:px-8 sm:py-5 sm:text-[18px]"
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
             >
-              <span className="material-symbols-outlined transition-transform group-hover:translate-y-0.5">
-                download
-              </span>
-            </a> */}
+              View Resume
+              <span className="material-symbols-outlined text-[20px]">open_in_new</span>
+            </a>
+            <a
+              className="rounded-full border border-white/10 bg-white/5 p-4 text-primary-container transition-all hover:bg-white/10 sm:p-5"
+              href={resumeUrl}
+              download="AkashJha-Resume.pdf"
+              title="Download Resume"
+            >
+              <span className="material-symbols-outlined text-[20px] sm:text-[24px]">download</span>
+            </a>
           </div>
         </div>
       </div>
@@ -58,4 +67,3 @@ function Hero({ onNavigate }) {
 }
 
 export default Hero;
-

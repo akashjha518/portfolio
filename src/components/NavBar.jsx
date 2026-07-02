@@ -5,7 +5,7 @@ function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
     <nav className="fixed top-0 z-[100] w-full border-b border-white/5 bg-surface/60 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-container-max items-center justify-between px-gutter py-md">
         <a
-          className="font-display-md text-display-md-mobile tracking-tight text-primary-container md:text-headline-lg"
+          className="font-display-md text-lg tracking-tight text-primary-container sm:text-xl md:text-2xl"
           href="#top"
           onClick={onNavigate('#top')}
         >
@@ -65,4 +65,3 @@ function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
 }
 
 export default NavBar;
-

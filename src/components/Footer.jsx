@@ -1,3 +1,5 @@
+import { resumeUrl } from '../data';
+
 function Footer({ onNavigate }) {
   return (
     <footer className="mt-xl w-full border-t border-white/5 bg-surface pb-lg pt-xl">
@@ -26,7 +28,7 @@ function Footer({ onNavigate }) {
               <a className="text-sm font-light text-on-surface-variant transition-colors hover:text-primary" href="#projects" onClick={onNavigate('#projects')}>
                 Projects
               </a>
-              <a className="text-sm font-light text-on-surface-variant transition-colors hover:text-primary" href="#">
+              <a className="text-sm font-light text-on-surface-variant transition-colors hover:text-primary" href={resumeUrl} target="_blank" rel="noreferrer">
                 Resume
               </a>
             </div>
@@ -44,4 +46,3 @@ function Footer({ onNavigate }) {
 }
 
 export default Footer;
-

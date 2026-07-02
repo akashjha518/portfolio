@@ -1,3 +1,5 @@
+export const resumeUrl = '/AkashJha.pdf';
+
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
@@ -64,7 +66,7 @@ export const featuredProjects = [
     color: 'secondary',
     description:
       'An Elite Fellowship project built during my bachelor’s program, created with vanilla JavaScript to simulate the JK_Master_Slave_Experiment virtually.',
-    image: '/images/virtual-lab.png',
+    image: './images/virtual-lab.png',
     primaryAction: 'Open Repo',
     secondaryAction: 'Repository',
     url: 'https://akashjha518.github.io/Virtual_Lab/',

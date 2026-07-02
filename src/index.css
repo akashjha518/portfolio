@@ -8,6 +8,13 @@
     scroll-padding-top: 96px;
   }
 
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+      scroll-padding-top: 84px;
+    }
+  }
+
   body {
     background-color: #131313;
     color: #e5e2e1;
@@ -17,6 +24,13 @@
   section[id],
   main[id] {
     scroll-margin-top: 96px;
+  }
+
+  @media (max-width: 640px) {
+    section[id],
+    main[id] {
+      scroll-margin-top: 84px;
+    }
   }
 }
 

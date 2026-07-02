@@ -12,12 +12,12 @@ function About() {
       <div className="grid items-center gap-xl py-xl lg:grid-cols-12">
         <div className="fade-in-up lg:col-span-5">
           <div className="relative mb-lg inline-block">
-            <h2 className="relative z-10 font-display-md text-display-md text-primary-container">
+            <h2 className="relative z-10 font-display-md text-3xl text-primary-container sm:text-display-md">
               Creative Objective
             </h2>
             <div className="absolute -bottom-2 -right-4 h-1 w-24 bg-primary/30" />
           </div>
-          <div className="space-y-lg font-body-lg text-lg leading-relaxed text-on-surface-variant font-light">
+          <div className="space-y-lg font-body-lg text-base leading-relaxed text-on-surface-variant font-light sm:text-lg">
             <p>
               I am a versatile developer specializing in Python and modern Web Technologies. My approach combines rigorous analytical thinking with a passion for building scalable, user-centric digital products.
             </p>
@@ -33,7 +33,7 @@ function About() {
                 <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-full transition-colors duration-500 ${statToneClasses[stat.tone]}`}>
                   <span className="material-symbols-outlined">{stat.icon}</span>
                 </div>
-                <span className={`mb-2 block font-display-md text-5xl ${stat.tone === 'primary' ? 'text-primary' : stat.tone === 'secondary' ? 'text-secondary' : 'text-tertiary'}`}>
+                <span className={`mb-2 block font-display-md text-4xl sm:text-5xl ${stat.tone === 'primary' ? 'text-primary' : stat.tone === 'secondary' ? 'text-secondary' : 'text-tertiary'}`}>
                   {stat.value}
                 </span>
                 <span className="font-label-ui text-xs uppercase tracking-widest text-on-surface-variant">
@@ -49,4 +49,3 @@ function About() {
 }
 
 export default About;
-
