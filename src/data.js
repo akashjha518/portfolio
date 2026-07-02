@@ -1,4 +1,4 @@
-export const resumeUrl = '/AkashJha.pdf';
+export const resumeUrl = `${import.meta.env.BASE_URL}AkashJha.pdf`;
 
 export const navLinks = [
   { label: 'About', href: '#about' },
@@ -96,7 +96,7 @@ export const featuredProjects = [
     secondaryAction: 'GitHub',
     primaryUrl:
       'https://aurobindo.du.ac.in/images/pdf/Journal%20of%20Research%20and%20Studies-Special%20Edition%202024.pdf#page=37',
-    url: 'https://github.com/akashjha518',
+    url: 'https://github.com/sakshi-garg02/Face-Mask-Detection',
   },
 ];
 
