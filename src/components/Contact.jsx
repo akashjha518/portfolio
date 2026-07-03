@@ -11,11 +11,11 @@ function Contact() {
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Reach out and let&apos;s start a conversation.
           </p>
           <div className="space-y-6">
-            <a className="group flex items-center gap-md text-on-surface-variant transition-all hover:text-primary-container" href="mailto:jhaa6768@gmail.com">
+            <a className="group flex items-center gap-md text-on-surface-variant transition-all hover:text-primary-container" href="mailto:jhaa60768@gmail.com">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 transition-colors group-hover:bg-primary/10">
                 <span className="material-symbols-outlined text-[24px]">mail</span>
               </div>
-              <span className="text-base font-light sm:text-lg">jhaa6768@gmail.com</span>
+              <span className="text-base font-light sm:text-lg">jhaa60768@gmail.com</span>
             </a>
             <a className="group flex items-center gap-md text-on-surface-variant transition-all hover:text-primary-container" href="https://github.com/akashjha518" target="_blank" rel="noreferrer">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 transition-colors group-hover:bg-primary/10">
@@ -45,7 +45,7 @@ function Contact() {
                   </label>
                   <input
                     className="w-full rounded-xl border border-white/10 bg-surface-container-lowest px-md py-4 text-on-surface outline-none transition-all placeholder:text-white/20 focus:border-primary-container focus:ring-0"
-                    placeholder="john@email.com"
+                    placeholder="Email"
                     type="email"
                   />
                 </div>

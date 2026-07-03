@@ -5,6 +5,7 @@ export const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Certificates', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -116,33 +117,84 @@ export const otherProjects = [
 
 export const certifications = [
   {
-    title: 'Workshops & Fellowships',
+    title: 'Elite Summer Fellowship',
     issuer: 'Virtual Lab Simulation',
+    category: 'Workshop',
     accent: 'primary',
-    icon: 'experiment',
+    image: '/Certificates/Akash.pdf',
+    sourceUrl: '/Certificates/Akash.pdf',
     description:
-      'Elite Summer Fellowship Program participant, focused on high-fidelity simulation environments and remote scientific education tools.',
-    actionLabel: 'View Certificate',
-    actionUrl: '#',
+      'Elite Summer Fellowship Program participation focused on high-fidelity simulation environments and remote scientific education tools.',
   },
   {
-    title: 'Great Learning',
-    issuer: 'Full Stack Development',
+    title: 'Full Stack Development',
+    issuer: 'Great Learning',
+    category: 'Academic',
     accent: 'secondary',
-    icon: 'workspace_premium',
+    image: '/Certificates/certificate%20of%20Completion.pdf',
+    sourceUrl: '/Certificates/certificate%20of%20Completion.pdf',
     description:
-      'Advanced certification in modern web architecture, encompassing both client-side and server-side engineering practices.',
-    actionLabel: 'View Certificate',
-    actionUrl: '#',
+      'Advanced certification in modern web architecture, covering client-side and server-side engineering practices.',
   },
   {
-    title: 'Kaggle',
-    issuer: 'Data Science & Python',
+    title: 'Data Science & Python',
+    issuer: 'Kaggle',
+    category: 'Academic',
     accent: 'tertiary',
-    icon: 'query_stats',
+    image: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
+    sourceUrl: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
     description:
       'Validated expertise in Python-based data analysis and machine learning workflows through Kaggle coursework.',
-    actionLabel: 'View Certificate',
-    actionUrl: '#',
+  },
+];
+
+export const certificateGallery = [
+  {
+    title: 'Workshop Certificate 1',
+    category: 'Workshop',
+    image: '/Certificates/Akash.pdf',
+    sourceUrl: '/Certificates/Akash.pdf',
+  },
+  {
+    title: 'Certificate 2',
+    category: 'Academic',
+    image: '/Certificates/certificate%20of%20Completion.pdf',
+    sourceUrl: '/Certificates/certificate%20of%20Completion.pdf',
+  },
+  {
+    title: 'Certificate 3',
+    category: 'Academic',
+    image: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
+    sourceUrl: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
+  },
+  {
+    title: 'Certificate 4',
+    category: 'Workshop',
+    image: '/Certificates/Akash(1).pdf',
+    sourceUrl: '/Certificates/Akash(1).pdf',
+  },
+  {
+    title: 'Certificate 5',
+    category: 'Workshop',
+    image: '/Certificates/Akash(2).pdf',
+    sourceUrl: '/Certificates/Akash(2).pdf',
+  },
+  {
+    title: 'Certificate 6',
+    category: 'Academic',
+    image: '/Certificates/Akash(3).pdf',
+    sourceUrl: '/Certificates/Akash(3).pdf',
+  },
+  {
+    title: 'Certificate 7',
+    category: 'Workshop',
+    image: '/Certificates/Akash(4).pdf',
+    sourceUrl: '/Certificates/Akash(4).pdf',
+  },
+  {
+    title: 'Certificate 8',
+    category: 'Academic',
+    image: '/Certificates/Mr.%20Akash%20Jha.pdf',
+    sourceUrl: '/Certificates/Mr.%20Akash%20Jha.pdf',
   },
 ];
