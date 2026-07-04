@@ -125,6 +125,7 @@ export const certifications = [
     sourceUrl: '/Certificates/Akash.pdf',
     description:
       'Elite Summer Fellowship Program participation focused on high-fidelity simulation environments and remote scientific education tools.',
+    galleryId: 'allCertificates',
   },
   {
     title: 'Full Stack Development',
@@ -135,6 +136,7 @@ export const certifications = [
     sourceUrl: '/Certificates/certificate%20of%20Completion.pdf',
     description:
       'Advanced certification in modern web architecture, covering client-side and server-side engineering practices.',
+    galleryId: 'greatLearning',
   },
   {
     title: 'Data Science & Python',
@@ -148,53 +150,154 @@ export const certifications = [
   },
 ];
 
+export const greatLearningCertificateGallery = [
+  {
+    id: 'TBHAXZIY',
+    preview: '/Greatlearning/Akash Jha.pdf',
+  },
+  {
+    id: 'DGBAWALQ',
+    preview: '/Greatlearning/Akash Jha (1).pdf',
+  },
+  {
+    id: 'VRDTZAZL',
+    preview: '/Greatlearning/Akash Jha (2).pdf',
+  },
+  {
+    id: 'RFJPEFSP',
+    preview: '/Greatlearning/Akash Jha (3).pdf',
+  },
+  {
+    id: 'KXZZKUAW',
+    preview: '/Greatlearning/Akash Jha (4).pdf',
+  },
+  {
+    id: 'IGTWAAKY',
+    preview: '/Greatlearning/Akash Jha (5).pdf',
+  },
+  {
+    id: 'XBLVKDCN',
+    preview: '/Greatlearning/Akash Jha (6).pdf',
+  },
+  {
+    id: 'MNEOBTRM',
+    preview: '/Greatlearning/Akash Jha (7).pdf',
+  },
+  {
+    id: 'FGZCCECV',
+    preview: '/Greatlearning/Akash Jha (8).pdf',
+  },
+  {
+    id: 'KJHDFXFQ',
+    preview: '/Greatlearning/Akash Jha (9).pdf',
+  },
+  {
+    id: 'SRXMIMAU',
+    preview: '/Greatlearning/Akash Jha (10).pdf',
+  },
+  {
+    id: 'LEXXLSEZ',
+    preview: '/Greatlearning/Akash Jha (11).pdf',
+  },
+  {
+    id: 'SNUIRJIY',
+    preview: '/Greatlearning/Akash Jha (12).pdf',
+  },
+  {
+    id: 'TGJRCBXZ',
+    preview: '/Greatlearning/Akash Jha (13).pdf',
+  },
+  {
+    id: 'YSGSLCGC',
+    preview: '/Greatlearning/Akash Jha (14).pdf',
+  },
+  {
+    id: 'QHKIODXQ',
+    preview: '/Greatlearning/Akash Jha (15).pdf',
+  },
+  {
+    id: 'MUZVWAXA',
+    preview: '/Greatlearning/Akash Jha (16).pdf',
+  },
+  {
+    id: 'HGTBAREG',
+    preview: '/Greatlearning/Akash Jha (17).pdf',
+  },
+  {
+    id: 'JZOEVPEM',
+    preview: '/Greatlearning/Akash Jha (18).pdf',
+  },
+  {
+    id: 'RVKPZSHQ',
+    preview: '/Greatlearning/Akash Jha (19).pdf',
+  },
+  {
+    id: 'QMCVQNXC',
+    preview: '/Greatlearning/Akash Jha (20).pdf',
+  },
+].map((certificate, index) => ({
+  title: `Great Learning Certificate ${index + 1}`,
+  category: 'Academic',
+  image: certificate.preview,
+  sourceUrl: `https://www.mygreatlearning.com/certificate/${certificate.id}?referrer_code=GL6KMFI1ZZMGC`,
+  previewAspect: 'aspect-[16/10]',
+}));
+
 export const certificateGallery = [
   {
     title: 'Workshop Certificate 1',
     category: 'Workshop',
     image: '/Certificates/Akash.pdf',
     sourceUrl: '/Certificates/Akash.pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 2',
     category: 'Academic',
     image: '/Certificates/certificate%20of%20Completion.pdf',
     sourceUrl: '/Certificates/certificate%20of%20Completion.pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 3',
     category: 'Academic',
     image: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
     sourceUrl: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 4',
     category: 'Workshop',
     image: '/Certificates/Akash(1).pdf',
     sourceUrl: '/Certificates/Akash(1).pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 5',
     category: 'Workshop',
     image: '/Certificates/Akash(2).pdf',
     sourceUrl: '/Certificates/Akash(2).pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 6',
     category: 'Academic',
     image: '/Certificates/Akash(3).pdf',
     sourceUrl: '/Certificates/Akash(3).pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 7',
     category: 'Workshop',
     image: '/Certificates/Akash(4).pdf',
     sourceUrl: '/Certificates/Akash(4).pdf',
+    previewAspect: 'aspect-[16/10]',
   },
   {
     title: 'Certificate 8',
     category: 'Academic',
     image: '/Certificates/Mr.%20Akash%20Jha.pdf',
     sourceUrl: '/Certificates/Mr.%20Akash%20Jha.pdf',
+    previewAspect: 'aspect-[16/10]',
   },
 ];

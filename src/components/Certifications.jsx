@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { certificateGallery, certifications } from '../data';
+import { certificateGallery, certifications, greatLearningCertificateGallery } from '../data';
 
 const accentStyles = {
   primary: {
@@ -20,14 +20,29 @@ function isPdfSource(src) {
   return /\.pdf(\?|#|$)/i.test(src);
 }
 
+function isExternalCertificateSource(src) {
+  return /^https:\/\/www\.mygreatlearning\.com\/certificate\//i.test(src);
+}
+
+function getPdfPreviewFragment(src, thumbnail = false) {
+  const baseFragment = thumbnail
+    ? '#page=1&view=FitH&zoom=145&toolbar=0&navpanes=0&scrollbar=0'
+    : '#page=1&view=FitH&zoom=100&toolbar=0&navpanes=0&scrollbar=0';
+
+  return `${src}${baseFragment}`;
+}
+
 function CertificateMedia({ src, title, className, thumbnail = false }) {
-  if (isPdfSource(src)) {
+  if (isPdfSource(src) || isExternalCertificateSource(src)) {
+    const previewSrc = isPdfSource(src) ? getPdfPreviewFragment(src, thumbnail) : src;
+
     return (
       <iframe
-        className={`${className} ${thumbnail ? 'pointer-events-none' : ''}`}
-        src={`${src}#view=FitH`}
+        className={`${className} ${thumbnail ? 'pointer-events-none origin-top -translate-y-4 scale-[1.12]' : ''}`}
+        src={previewSrc}
         title={title}
         loading="lazy"
+        referrerPolicy="no-referrer"
       />
     );
   }
@@ -38,6 +53,8 @@ function CertificateMedia({ src, title, className, thumbnail = false }) {
 function Certifications() {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [activeCertificate, setActiveCertificate] = useState(certifications[0]);
+  const [activeGallery, setActiveGallery] = useState(certificateGallery);
+  const [activeGalleryTitle, setActiveGalleryTitle] = useState('All Certificates');
   const [zoomedCertificate, setZoomedCertificate] = useState(null);
 
   useEffect(() => {
@@ -67,7 +84,27 @@ function Certifications() {
     };
   }, [galleryOpen, zoomedCertificate]);
 
+  const getGalleryForCertificate = (certificate) => {
+    if (certificate.galleryId === 'greatLearning') {
+      return greatLearningCertificateGallery;
+    }
+
+    if (certificate.galleryId === 'allCertificates') {
+      return certificateGallery;
+    }
+
+    return null;
+  };
+
   const openGallery = (certificate) => {
+    const gallery = getGalleryForCertificate(certificate);
+
+    if (!gallery) {
+      return;
+    }
+
+    setActiveGallery(gallery);
+    setActiveGalleryTitle(certificate.galleryId === 'greatLearning' ? 'Great Learning Certificates' : 'All Certificates');
     setActiveCertificate(certificate);
     setGalleryOpen(true);
   };
@@ -87,14 +124,15 @@ function Certifications() {
           Academic and Workshop <span className="text-primary-container">Certificates</span>
         </h2>
         <p className="mt-3 text-on-surface-variant">
-          Click the first card to open the certificate gallery. Hover images to zoom, and click an image to open it larger.
+          Open a certificate card gallery, hover previews to zoom, and click any item to view it larger.
         </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
         {certifications.map((certificate, index) => {
           const styles = accentStyles[certificate.accent] ?? accentStyles.primary;
-          const isGalleryEntry = index === 0;
+          const gallery = getGalleryForCertificate(certificate);
+          const isGalleryEntry = Boolean(gallery);
 
           return (
             <div
@@ -164,7 +202,7 @@ function Certifications() {
                   Gallery
                 </p>
                 <h3 className="mt-1 text-lg font-semibold text-on-surface sm:text-2xl">
-                  All Certificates
+                  {activeGalleryTitle}
                 </h3>
               </div>
               <button
@@ -179,7 +217,7 @@ function Certifications() {
 
             <div className="p-4 sm:p-6">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {certificateGallery.map((certificate) => (
+                {activeGallery.map((certificate) => (
                   <button
                     key={certificate.sourceUrl}
                     type="button"
@@ -193,16 +231,28 @@ function Certifications() {
                       setZoomedCertificate(certificate);
                     }}
                   >
-                    <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]">
-                      <CertificateMedia
-                        className="h-[140%] w-full origin-top scale-[0.88] object-contain bg-white transition-transform duration-700 group-hover:scale-[0.94]"
-                        src={certificate.image}
-                        title={`${certificate.title} gallery thumbnail`}
-                        thumbnail
-                      />
+                    <div
+                      className={`relative overflow-hidden bg-[#ede8dd] p-2 ${
+                        certificate.previewAspect ?? 'aspect-[4/5]'
+                      }`}
+                    >
+                      <div className="h-full w-full overflow-hidden rounded-[1rem] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.25)] ring-1 ring-black/5">
+                        <CertificateMedia
+                          className="h-full w-full transition-transform duration-700 group-hover:scale-[1.02]"
+                          src={certificate.image}
+                          title={`${certificate.title} gallery thumbnail`}
+                          thumbnail
+                        />
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                       <div className="absolute bottom-3 left-3 right-3">
                         <h4 className="text-sm font-semibold text-white">{certificate.title}</h4>
+                        {isExternalCertificateSource(certificate.sourceUrl) ? (
+                          <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-[#a7c2ff]">
+                            Open preview
+                            <span className="material-symbols-outlined text-sm">open_in_new</span>
+                          </span>
+                        ) : null}
                       </div>
                     </div>
                   </button>
@@ -219,24 +269,36 @@ function Certifications() {
 
       {zoomedCertificate ? (
         <div
-          className="fixed inset-0 z-[210] flex items-center justify-center bg-black/25 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[210] flex items-center justify-center bg-black/35 px-3 py-4 backdrop-blur-sm sm:px-4 sm:py-6"
           role="dialog"
           aria-modal="true"
           aria-label={`${zoomedCertificate.title} preview`}
           onClick={() => setZoomedCertificate(null)}
         >
-          <button
-            type="button"
-            className="group max-h-[90vh] max-w-4xl overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0f0f0f]/80 shadow-[0_30px_120px_rgba(0,0,0,0.65)]"
+          <div
+            className="group flex h-[92vh] w-full max-w-[min(96vw,1200px)] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#ede8dd] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.65)]"
             onClick={(event) => event.stopPropagation()}
-            aria-label="Close enlarged certificate preview"
           >
-            <CertificateMedia
-              className="max-h-[90vh] w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-              src={zoomedCertificate.image}
-              title={`${zoomedCertificate.title} enlarged preview`}
-            />
-          </button>
+            <div className="flex min-h-0 flex-[1_1_auto] overflow-hidden rounded-[1.15rem] bg-white shadow-[0_18px_40px_rgba(0,0,0,0.22)] ring-1 ring-black/5">
+              <CertificateMedia
+                className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+                src={zoomedCertificate.image}
+                title={`${zoomedCertificate.title} enlarged preview`}
+              />
+            </div>
+            {isExternalCertificateSource(zoomedCertificate.sourceUrl) ? (
+              <a
+                className="flex items-center justify-center gap-2 border-t border-white/10 bg-black/70 px-5 py-4 text-sm font-semibold text-[#a7c2ff] transition-colors hover:bg-black/80"
+                href={zoomedCertificate.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(event) => event.stopPropagation()}
+              >
+                Open Great Learning certificate
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            ) : null}
+          </div>
         </div>
       ) : null}
     </section>
