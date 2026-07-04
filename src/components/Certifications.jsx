@@ -121,7 +121,7 @@ function Certifications() {
           Certificates
         </div>
         <h2 className="font-display-md text-3xl text-on-surface sm:text-display-md">
-          Academic and Workshop <span className="text-primary-container">Certificates</span>
+          <span className="text-primary-container">Certificates</span>
         </h2>
         <p className="mt-3 text-on-surface-variant">
           Open a certificate card gallery, hover previews to zoom, and click any item to view it larger.

@@ -59,7 +59,7 @@ function Hero({ onNavigate }) {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
         <span className="material-symbols-outlined text-[32px]">keyboard_double_arrow_down</span>
       </div>
     </section>

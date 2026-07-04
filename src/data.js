@@ -117,23 +117,19 @@ export const otherProjects = [
 
 export const certifications = [
   {
-    title: 'Elite Summer Fellowship',
-    issuer: 'Virtual Lab Simulation',
+    title: 'Workshops Certificate',
+    issuer: 'Acharya Narendra Dev College',
     category: 'Workshop',
     accent: 'primary',
-    image: '/Certificates/Akash.pdf',
-    sourceUrl: '/Certificates/Akash.pdf',
     description:
       'Elite Summer Fellowship Program participation focused on high-fidelity simulation environments and remote scientific education tools.',
     galleryId: 'allCertificates',
   },
   {
-    title: 'Full Stack Development',
+    title: 'Great Learning Certificate',
     issuer: 'Great Learning',
     category: 'Academic',
     accent: 'secondary',
-    image: '/Certificates/certificate%20of%20Completion.pdf',
-    sourceUrl: '/Certificates/certificate%20of%20Completion.pdf',
     description:
       'Advanced certification in modern web architecture, covering client-side and server-side engineering practices.',
     galleryId: 'greatLearning',
@@ -143,8 +139,6 @@ export const certifications = [
     issuer: 'Kaggle',
     category: 'Academic',
     accent: 'tertiary',
-    image: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
-    sourceUrl: '/Certificates/data%20science%20with%20Python%20certificate.pdf',
     description:
       'Validated expertise in Python-based data analysis and machine learning workflows through Kaggle coursework.',
   },
@@ -245,7 +239,7 @@ export const greatLearningCertificateGallery = [
 
 export const certificateGallery = [
   {
-    title: 'Workshop Certificate 1',
+    title: 'Certificate 1',
     category: 'Workshop',
     image: '/Certificates/Akash.pdf',
     sourceUrl: '/Certificates/Akash.pdf',
