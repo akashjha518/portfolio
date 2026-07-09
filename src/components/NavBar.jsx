@@ -2,7 +2,7 @@ import { navLinks } from '../data';
 
 function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
   return (
-    <nav className="fixed top-0 z-[100] w-full border-b border-white/5 bg-surface/60 backdrop-blur-2xl">
+    <nav className="fixed top-0 z-[100] w-full border-b border-white/5 bg-black/35 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-container-max items-center justify-between px-gutter py-md">
         <a
           className="font-display-md text-lg tracking-tight text-primary-container sm:text-xl md:text-2xl"
@@ -15,7 +15,7 @@ function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              className="py-2 font-label-ui text-label-ui text-on-surface-variant transition-colors hover:text-primary"
+              className="py-2 font-label-ui text-label-ui text-on-surface-variant transition-colors hover:text-primary-container"
               href={link.href}
               onClick={onNavigate(link.href)}
             >
@@ -30,7 +30,7 @@ function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
           </a>
         </div>
         <button
-          className="p-2 text-primary md:hidden"
+          className="rounded-full border border-white/10 bg-white/5 p-2 text-primary-container md:hidden"
           type="button"
           onClick={() => setMenuOpen((value) => !value)}
           aria-label="Toggle navigation menu"
@@ -39,7 +39,7 @@ function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
         </button>
       </div>
       {menuOpen ? (
-        <div className="border-t border-white/5 bg-surface/95 px-gutter py-md md:hidden">
+        <div className="border-t border-white/5 bg-[#111111]/95 px-gutter py-md md:hidden">
           <div className="mx-auto flex max-w-container-max flex-col gap-3">
             {navLinks.map((link) => (
               <a

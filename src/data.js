@@ -47,13 +47,37 @@ export const statCards = [
   },
 ];
 
+export const heroHighlights = [
+  'Web interfaces that feel intentional, fast, and polished',
+  'Python systems built for automation, analysis, and vision tasks',
+  'A design-first mindset paired with practical engineering execution',
+];
+
+export const journeyItems = [
+  [
+    '2024 - 2026 (Expected)',
+    'M.Sc. Informatics',
+    'Specializing in advanced computing and digital systems architecture with a focus on human-centered software.',
+  ],
+  [
+    '2020 - 2023',
+    'B.Sc. Electronic Science',
+    'Built a strong foundation in hardware-software integration, digital electronics, and signal processing.',
+  ],
+  [
+    'Summer 2022',
+    'Elite Summer Fellow',
+    'Researched and built components for Virtual Laboratory platforms and open-access scientific education tools.',
+  ],
+];
+
 export const featuredProjects = [
   {
     title: 'Gameified Resume',
     tags: ['React', 'Three.js'],
     color: 'primary',
     description:
-      'Transforming the standard CV into an interactive 3D digital universe, pushing the limits of web-based spatial experiences.',
+      'Transforming the standard CV into an interactive 3D digital universe that pushes the limits of web-based spatial experiences.',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCCvU99fjyHMx20qjEvFg8q2Y2ulb5PTnZ_jvcrYaw8d7zAhPcue__1MRkRPtPB6eurjnC0if2u0dui2VKDJdl9reBTQ1KM9-mFw7BrOV1srsAzZxnSlSk4Rbjt2WSW43xTld-VKCIOc6JTQwVw1fcl6M_hyBay1WoRHb9L9ZmvP4N8TK2Auy3MTBR7O64qYmZR74j_ygOVikcCKuLJAtgTIjT8oA5lN-OdMBZoH9QEYjKxbM4IbctMUh3zOd9pn9ojyBhIk5l4_Iw',
     primaryAction: 'Launch Experience',
@@ -90,7 +114,7 @@ export const featuredProjects = [
     tags: ['Python', 'Computer Vision'],
     color: 'tertiary',
     description:
-      'A high-precision real-time detection system utilizing advanced computer vision to monitor safety compliance autonomously.',
+      'A high-precision real-time detection system using computer vision to monitor safety compliance autonomously.',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuA_hSXBFmbLmYQzlYATSyMfI9fyONW8zw5BCx8nNk4qzURORXHf_wSyI5FcptIhBxno9hDtfLw8cBU2YfRMRQqSeTvOlyUNbcQExEQ6oqKVeCCZN19dIzlx8XuL0mV-BJEWP0Gf7s7QJ-i8fScVP_UaV81kTbNgX_9AXKRvbqGlIuefLpDLjbnpD6gwTn0CQGOVt413azhIQbryZlCMc6KHCIWD_mIwl-jqR92ayhq4ZhP9U_duS13lTFIlQr7Af5ldpI1Y3AyUAtY',
     primaryAction: 'View Journal',

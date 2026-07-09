@@ -2,11 +2,15 @@ import { resumeUrl } from '../data';
 
 function Footer({ onNavigate }) {
   return (
-    <footer className="mt-xl w-full border-t border-white/5 bg-surface pb-lg pt-xl">
+    <footer className="mt-xl w-full border-t border-white/5 bg-black/35 pb-lg pt-xl backdrop-blur-2xl">
       <div className="mx-auto max-w-container-max px-gutter">
         <div className="mb-xl flex flex-col items-center justify-between gap-xl md:flex-row">
           <div className="text-center md:text-left">
-            <a className="mb-2 block font-display-md text-2xl text-primary-container" href="#top" onClick={onNavigate('#top')}>
+            <a
+              className="mb-2 block font-display-md text-2xl text-primary-container"
+              href="#top"
+              onClick={onNavigate('#top')}
+            >
               Akash Jha
             </a>
             <p className="max-w-xs font-light text-on-surface-variant">
@@ -35,7 +39,7 @@ function Footer({ onNavigate }) {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-md border-t border-white/5 pt-lg text-xs font-light uppercase tracking-widest text-on-surface-variant/60 md:flex-row">
-          <span>© 2024 Akash Jha. All rights reserved.</span>
+          <span>© 2026 Akash Jha. All rights reserved.</span>
           <div className="flex gap-lg">
             <span>Built with Passion & Precision</span>
           </div>

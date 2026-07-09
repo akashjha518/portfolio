@@ -115,15 +115,13 @@ function Certifications() {
   };
 
   return (
-    <section className="mx-auto max-w-container-max px-gutter py-xl" id="certifications">
+    <section className="section-shell" id="certifications">
       <div className="fade-in-up mb-xl max-w-3xl">
-        <div className="mb-3 inline-flex rounded-full border border-primary/15 bg-primary/5 px-4 py-1 text-xs font-bold uppercase tracking-[0.24em] text-primary-container">
-          Certificates
-        </div>
-        <h2 className="font-display-md text-3xl text-on-surface sm:text-display-md">
-          <span className="text-primary-container">Certificates</span>
+        <div className="section-kicker">Certificates</div>
+        <h2 className="section-title">
+          Verified <span className="accent">credentials</span>
         </h2>
-        <p className="mt-3 text-on-surface-variant">
+        <p className="section-copy">
           Open a certificate card gallery, hover previews to zoom, and click any item to view it larger.
         </p>
       </div>

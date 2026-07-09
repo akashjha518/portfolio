@@ -8,28 +8,26 @@ const statToneClasses = {
 
 function About() {
   return (
-    <section className="mx-auto max-w-container-max px-gutter py-xl" id="about">
-      <div className="grid items-center gap-xl py-xl lg:grid-cols-12">
+    <section className="section-shell" id="about">
+      <div className="grid items-center gap-xl lg:grid-cols-12">
         <div className="fade-in-up lg:col-span-5">
-          <div className="relative mb-lg inline-block">
-            <h2 className="relative z-10 font-display-md text-3xl text-primary-container sm:text-display-md">
-              Creative Objective
-            </h2>
-            <div className="absolute -bottom-2 -right-4 h-1 w-24 bg-primary/30" />
-          </div>
-          <div className="space-y-lg font-body-lg text-base leading-relaxed text-on-surface-variant font-light sm:text-lg">
+          <div className="section-kicker">About</div>
+          <h2 className="section-title">
+            Creative <span className="accent">objective</span>
+          </h2>
+          <div className="section-copy space-y-6">
             <p>
-              I am a versatile developer specializing in Python and modern Web Technologies. My approach combines rigorous analytical thinking with a passion for building scalable, user-centric digital products.
+              I am a versatile developer specializing in Python and modern web technologies. My approach combines rigorous analytical thinking with a passion for building scalable, user-centric digital products.
             </p>
             <p>
-              Currently completing my M.Sc. in Informatics, I bridge the gap between complex backend logic and fluid frontend experiences, utilizing ML libraries and modern frameworks to solve real-world problems.
+              Currently completing my M.Sc. in Informatics, I bridge the gap between backend logic and fluid frontend experiences, using ML libraries and modern frameworks to solve real-world problems.
             </p>
           </div>
         </div>
         <div className="fade-in-up lg:col-span-7 lg:pl-xl" style={{ transitionDelay: '100ms' }}>
-          <div className="grid grid-cols-2 gap-lg">
+          <div className="grid grid-cols-1 gap-lg sm:grid-cols-2">
             {statCards.map((stat) => (
-              <div key={stat.label} className="glass-card group flex flex-col items-center justify-center rounded-2xl p-lg py-xl text-center">
+              <div key={stat.label} className="glass-card group flex flex-col items-center justify-center rounded-[1.5rem] p-lg py-xl text-center">
                 <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-full transition-colors duration-500 ${statToneClasses[stat.tone]}`}>
                   <span className="material-symbols-outlined">{stat.icon}</span>
                 </div>

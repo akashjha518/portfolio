@@ -2,13 +2,14 @@ import { featuredProjects, otherProjects } from '../data';
 
 function Projects() {
   return (
-    <section className="mx-auto max-w-container-max px-gutter py-xl" id="projects">
+    <section className="section-shell" id="projects">
       <div className="fade-in-up mb-xl flex flex-col items-end justify-between gap-md md:flex-row">
         <div>
-          <h2 className="mb-sm font-display-md text-3xl text-on-surface sm:text-display-md">
-            Featured <span className="text-primary-container">Work</span>
+          <div className="section-kicker">Projects</div>
+          <h2 className="section-title">
+            Featured <span className="accent">work</span>
           </h2>
-          <p className="font-light text-on-surface-variant">
+          <p className="section-copy">
             A selection of my most significant technical achievements.
           </p>
         </div>
@@ -29,7 +30,7 @@ function Projects() {
         {featuredProjects.map((project, index) => (
           <article
             key={project.title}
-            className="glass-card fade-in-up group flex flex-col overflow-hidden rounded-2xl"
+            className="glass-card fade-in-up group flex flex-col overflow-hidden rounded-[1.5rem]"
             style={{ transitionDelay: `${index * 100}ms` }}
           >
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -81,12 +82,12 @@ function Projects() {
       </div>
 
       <div className="fade-in-up border-t border-white/5 pt-xl">
-          <h2 className="mb-lg font-display-md text-3xl text-on-surface sm:text-display-md">
-            Other Technical <span className="text-primary-container">Projects</span>
-          </h2>
+        <h2 className="section-title">
+          Other technical <span className="accent">projects</span>
+        </h2>
         <div className="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-4">
           {otherProjects.map(([title, tag, icon, description, url]) => (
-            <div key={title} className="group flex h-full flex-col rounded-xl p-lg glass-card">
+            <div key={title} className="group flex h-full flex-col rounded-[1.35rem] p-lg glass-card">
               <div className="mb-md flex items-start justify-between">
                 <div className="rounded-lg border border-primary/10 bg-primary/5 p-2 transition-colors group-hover:border-primary/30">
                   <span className="material-symbols-outlined text-primary">{icon}</span>

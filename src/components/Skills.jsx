@@ -2,14 +2,15 @@ import { skills } from '../data';
 
 function Skills() {
   return (
-    <section className="relative bg-surface-container-lowest/30 py-xl" id="skills">
+    <section className="relative py-xl" id="skills">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      <div className="relative z-10 mx-auto max-w-container-max px-gutter">
+      <div className="relative z-10 section-shell section-shell--tight">
         <div className="fade-in-up mb-xl text-center">
-          <h2 className="mb-md font-display-md text-3xl text-on-surface sm:text-display-md">
-            Technical <span className="text-primary-container">Capabilities</span>
+          <div className="section-kicker mx-auto">Skills</div>
+          <h2 className="section-title">
+            Technical <span className="accent">capabilities</span>
           </h2>
-          <p className="mx-auto max-w-xl font-light text-on-surface-variant">
+          <p className="section-copy mx-auto text-center">
             A curated stack of technologies I use to bring complex ideas to life.
           </p>
         </div>
@@ -17,7 +18,7 @@ function Skills() {
           {skills.map((skill, index) => (
             <div
               key={skill.title}
-              className="glass-card fade-in-up rounded-2xl p-lg"
+              className="glass-card fade-in-up rounded-[1.5rem] p-lg"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="mb-md flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">

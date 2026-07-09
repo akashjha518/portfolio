@@ -13,6 +13,14 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className="font-body-md text-body-md selection:bg-primary-container/30 selection:text-primary">
+    <div className="site-shell font-body-md text-body-md selection:bg-primary-container/30 selection:text-primary">
       <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} onNavigate={handleAnchorClick} />
       <main id="top">
         <Hero onNavigate={handleAnchorClick} />
