@@ -1,67 +1,50 @@
-import { navLinks } from '../data';
+import { navLinks } from "../data";
 
-function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
+export default function NavBar({ menuOpen, setMenuOpen, onNavigate }) {
+  const handleClick = (event, href) => onNavigate(event, href);
+
   return (
-    <nav className="fixed top-0 z-[100] w-full border-b border-white/5 bg-black/35 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-container-max items-center justify-between px-gutter py-md">
-        <a
-          className="font-display-md text-lg tracking-tight text-primary-container sm:text-xl md:text-2xl"
-          href="#top"
-          onClick={onNavigate('#top')}
-        >
-          Akash Jha
+    <header className="navbar">
+      <div className="navbar-inner">
+        <a className="brand" href="#top" onClick={(event) => handleClick(event, "#top")} aria-label="Akash Jha, back to top">
+          <span className="brand-mark" aria-hidden="true">AJ</span>
+          <span>
+            <span className="brand-name">AKASH JHA</span>
+            <span className="brand-subtitle">CYBERSECURITY · BLUE TEAM</span>
+          </span>
         </a>
-        <div className="hidden items-center gap-lg md:flex">
+
+        <nav className="nav-links" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              className="py-2 font-label-ui text-label-ui text-on-surface-variant transition-colors hover:text-primary-container"
-              href={link.href}
-              onClick={onNavigate(link.href)}
-            >
+            <a key={link.href} className="nav-link" href={link.href} onClick={(event) => handleClick(event, link.href)}>
               {link.label}
             </a>
           ))}
-          <a
-            className="ml-4 rounded-full bg-primary-container px-lg py-sm font-label-ui text-label-ui text-on-primary-container transition-all duration-300 hover:shadow-[0_0_20px_rgba(60,233,245,0.3)]"
-            href="mailto:akashjha518@gmail.com"
-          >
-            Hire Me
-          </a>
-        </div>
+          <a className="nav-contact" href="#contact" onClick={(event) => handleClick(event, "#contact")}>Contact ↗</a>
+        </nav>
+
         <button
-          className="rounded-full border border-white/10 bg-white/5 p-2 text-primary-container md:hidden"
+          className="menu-toggle"
           type="button"
-          onClick={() => setMenuOpen((value) => !value)}
-          aria-label="Toggle navigation menu"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
+          {menuOpen ? "×" : "☰"}
         </button>
       </div>
-      {menuOpen ? (
-        <div className="border-t border-white/5 bg-[#111111]/95 px-gutter py-md md:hidden">
-          <div className="mx-auto flex max-w-container-max flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                className="rounded-xl border border-white/5 bg-white/5 px-md py-3 font-label-ui text-on-surface-variant transition-colors hover:text-primary"
-                href={link.href}
-                onClick={onNavigate(link.href)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              className="rounded-xl bg-primary-container px-md py-3 text-center font-label-ui text-on-primary-container"
-              href="mailto:akashjha518@gmail.com"
-            >
-              Hire Me
+
+      <nav id="mobile-navigation" className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation" aria-hidden={!menuOpen}>
+        <div className="mobile-nav-inner">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} tabIndex={menuOpen ? 0 : -1} onClick={(event) => handleClick(event, link.href)}>
+              {link.label}<span aria-hidden="true">↗</span>
             </a>
-          </div>
+          ))}
+          <a className="mobile-contact" href="#contact" tabIndex={menuOpen ? 0 : -1} onClick={(event) => handleClick(event, "#contact")}>Contact me ↗</a>
         </div>
-      ) : null}
-    </nav>
+      </nav>
+    </header>
   );
 }
-
-export default NavBar;

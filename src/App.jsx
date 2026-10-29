@@ -1,69 +1,72 @@
-import { useEffect, useState } from 'react';
-import NavBar from './components/NavBar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Journey from './components/Journey';
-import Certifications from './components/Certifications';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useEffect, useState } from "react";
+import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Labs from "./components/Labs";
+import Journey from "./components/Journey";
+import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
-
-  useEffect(() => {
+    const nodes = document.querySelectorAll("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach((node) => node.classList.add("is-visible"));
+      return undefined;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -80px 0px' },
+      { threshold: 0.08, rootMargin: "0px 0px -28px 0px" }
     );
-
-    document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
-
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
 
-  const handleAnchorClick = (href) => (event) => {
+  useEffect(() => {
+    document.body.classList.toggle("menu-is-open", menuOpen);
+    return () => document.body.classList.remove("menu-is-open");
+  }, [menuOpen]);
+
+  const navigate = (event, href) => {
+    if (!href?.startsWith("#")) return;
+    const target = document.querySelector(href);
+    if (!target) return;
     event.preventDefault();
     setMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    target.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+    window.history.replaceState(null, "", href);
   };
 
   return (
-    <div className="site-shell font-body-md text-body-md selection:bg-primary-container/30 selection:text-primary">
-      <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} onNavigate={handleAnchorClick} />
-      <main id="top">
-        <Hero onNavigate={handleAnchorClick} />
+    <div className="portfolio" id="top">
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} onNavigate={navigate} />
+      <main id="main-content">
+        <Hero onNavigate={navigate} />
         <About />
         <Skills />
         <Projects />
+        <Labs />
         <Journey />
         <Certifications />
         <Contact />
       </main>
-      <Footer onNavigate={handleAnchorClick} />
+      <Footer onNavigate={navigate} />
     </div>
   );
 }
-
-export default App;
